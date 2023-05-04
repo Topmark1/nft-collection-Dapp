@@ -5,7 +5,7 @@ import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
-import styles from "../styles/Home.module.css";
+import * as styles from "../styles/Home.modules.css";
 
 export default function Home() {
   // walletConnected keep track of whether the user's wallet is connected or not
@@ -293,7 +293,7 @@ export default function Home() {
     // If wallet is not connected, return a button which allows them to connect their wallet
     if (!walletConnected) {
       return (
-        <button onClick={connectWallet} className={styles.button}>
+        <button onClick={connectWallet} className="button">
           Connect your wallet
         </button>
       );
@@ -301,13 +301,13 @@ export default function Home() {
 
     // If we are currently waiting for something, return a loading button
     if (loading) {
-      return <button className={styles.button}>Loading...</button>;
+      return <button className="button">Loading...</button>;
     }
 
     // If connected user is the owner, and presale hasn't started yet, allow them to start the presale
     if (isOwner && !presaleStarted) {
       return (
-        <button className={styles.button} onClick={startPresale}>
+        <button className="button" onClick={startPresale}>
           Start Presale!
         </button>
       );
@@ -317,7 +317,7 @@ export default function Home() {
     if (!presaleStarted) {
       return (
         <div>
-          <div className={styles.description}>Presale hasn&#39;t started!</div>
+          <div className="description">Presale hasn&#39;t started!</div>
         </div>
       );
     }
@@ -326,11 +326,11 @@ export default function Home() {
     if (presaleStarted && !presaleEnded) {
       return (
         <div>
-          <div className={styles.description}>
+          <div className="description">
             Presale has started!!! If your address is whitelisted, Mint a Crypto
             Dev 🥳
           </div>
-          <button className={styles.button} onClick={presaleMint}>
+          <button className="button" onClick={presaleMint}>
             Presale Mint 🚀
           </button>
         </div>
@@ -340,7 +340,7 @@ export default function Home() {
     // If presale started and has ended, it's time for public minting
     if (presaleStarted && presaleEnded) {
       return (
-        <button className={styles.button} onClick={publicMint}>
+        <button className="button" onClick={publicMint}>
           Public Mint 🚀
         </button>
       );
@@ -349,28 +349,23 @@ export default function Home() {
 
   return (
     <div>
-      <Head>
-        <title>Crypto Devs</title>
-        <meta name="description" content="Whitelist-Dapp" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className={styles.main}>
+      <div className="main">
         <div>
-          <h1 className={styles.title}>Welcome to Crypto Devs!</h1>
-          <div className={styles.description}>
+          <h1 className="title">Welcome to Crypto Devs!</h1>
+          <div className="description">
             It&#39;s an NFT collection for developers in Crypto.
           </div>
-          <div className={styles.description}>
+          <div className="description">
             {tokenIdsMinted}/20 have been minted
           </div>
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src="./cryptodevs/0.svg" />
+          <img className="image" src="./cryptodevs/0.svg" />
         </div>
       </div>
 
-      <footer className={styles.footer}>
+      <footer className="footer">
         Made with &#10084; by Crypto Devs
       </footer>
     </div>
