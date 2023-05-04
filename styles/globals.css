@@ -1,0 +1,97 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      @apply scroll-smooth;
+    }
+  }
+@layer components {
+.infoText {
+ @apply text-xs sm:text-sm p-2 sm:p-4 bg-gray-700/50 rounded-lg max-w-[300px];
+}}
+
+@font-face {
+    font-family: 'satoshiR';
+    src: url('/fonts/satoshi-Variable.woff2') format('woff2'),
+         url('/fonts/satoshi-Variable.woff') format('woff'),
+         url('/fonts/satoshi-Variable.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+@font-face {
+    font-family: 'clash displayR';
+    src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+         url('/fonts/ClashDisplay-Variable.woff') format('woff'),
+         url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+  @font-face{
+    font-family: 'amazing kids';
+    src: url('/fonts/Amazing Kids.ttf') format('truetype');
+}
+  
+.font-Sa{
+    font-family: 'satoshiR';
+}
+.font-CD{
+    font-family: 'clash displayR';
+}
+.font-AK{
+    font-family: 'amazing kids';
+}
+
+.main {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.footer {
+  display: flex;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 70%;
+  height: 50%;
+  margin-left: 20%;
+}
+
+
+.description {
+  line-height: 1;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 20px;
+  width: 200px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+@media (max-width: 1000px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
