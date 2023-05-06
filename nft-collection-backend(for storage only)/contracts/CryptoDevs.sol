@@ -117,4 +117,4 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     // Fallback function is called when msg.data is not empty
     fallback() external payable {}
 }
-// Crypto Devs Contract Address: 0x3252Ce8cA07c0d1Acc8838be1aed381dCCe1e977
+// Crypto Devs Contract Address: 0x3aAb1447EC4f3F85606D11Ef9aff03F379ff986f
